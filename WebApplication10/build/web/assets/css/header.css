@@ -1,0 +1,128 @@
+
+body{
+    background: #ffffff;
+    background-size: cover;
+    background-position-y: -100px;
+    box-sizing: border-box;
+}
+.container{
+    max-width: 960px;
+    margin: 0px auto;
+}
+
+form{
+    max-height: 100%;
+    max-width: 100px;
+    padding-left: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+form input{
+    flex: 1;
+    max-width: 100%;
+    border-radius:20px 0 0 20px;
+    border: none;
+    outline: none;
+    margin-left: 5px;
+    padding: 3px 10px;
+}
+
+form button{
+    background: white;
+    margin-left: -8px;
+    padding: 3px 10px;
+    border: none;
+    outline: none;
+    letter-spacing: 1px;
+    cursor: pointer;
+    border-radius: 0 20px 20px 0;
+}
+
+#header{
+    background-color: #131921;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    justify-items: center;
+}
+#logo{
+    padding: 5px 0px;
+}
+#logo img{
+    max-width: 50px;
+    height: auto;
+    object-fit: cover;
+    padding: 5px;
+}
+
+#main-menu{
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 5px;
+    font-size: 20px;
+}
+#main-menu{
+    position: relative;
+}
+#main-menu li a{
+    color: #f8f8f8;
+    display: block;
+    padding: 18px 20px;
+    text-decoration: none;
+}
+
+
+#main-menu ul.sub-menu{
+    position: absolute;
+    background-color: #131921;
+    color: black;
+    padding: 15px 0px;
+    list-style: none;
+    width: 150px;
+    display: none;
+}
+
+#main-menu li:hover ul.sub-menu{
+    display: block;
+    background: #131921;
+}
+
+#main-menu ul.sub-menu a{
+    padding: 8px 15px;
+    border-bottom: 1px solid #131921;
+    color: red;
+    position: relative;
+    z-index: 20;
+    flex-basis: 100%;
+}
+
+#main-menu ul.sub-menu li:hover a{
+    border-bottom: 1px solid #131921;
+    position: relative;
+    z-index: 21;
+    width: 50px;
+}
+#main-menu ul.sub-menu li:last-child a{
+    position: relative;
+    z-index: 22;
+}
+#main-menu>li>a{
+    position: relative;
+}
+#main-menu>li>a::before{
+    content: "";
+    height: 3px;
+    width: 0px;
+    background: red;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    transition: 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+#main-menu>li:hover>a::before{
+    width: 100%;
+}
+

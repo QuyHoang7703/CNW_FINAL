@@ -1,0 +1,57 @@
+body {
+    /*    font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+        display: flex;*/
+
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Thay đổi giá trị height */
+}
+
+.product-container {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 50px;
+    padding: 50px;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+}
+
+.product-image {
+    max-width: 40%;
+    height: auto;
+    border-radius: 8px;
+    margin-right: 20px;
+}
+
+.info p{
+    margin-top: 10px;
+    font-size: 25px;
+}
+
+.size button{
+     background-color: #131921;
+    color: #fff;
+}
+
+.product-button {
+    background-color: #131921;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 50%;
+    margin: 5px;
+}
+
+.product-button:hover {
+    background-color: #45a049;
+}
+
+
