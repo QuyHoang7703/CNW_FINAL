@@ -269,7 +269,7 @@ public class Cart_DAO {
              System.out.println("So luong ban dau ko lay dc la");
             ex.printStackTrace();;
         }
-        String sql = "Update product_size set quantity = ? where id_product = ? and id_sỉze=? ";
+        String sql = "Update product_size set quantity =? where id_product =? and id_size=? ";
 
         try {
              
@@ -280,7 +280,7 @@ public class Cart_DAO {
             preparedStatement.setString(2, product_size.getId_product());
             System.out.println("id sp cap nhap so luong: " +product_size.getId_product());
             preparedStatement.setInt(3, product_size.getId_size());
-            System.out.println("id sp cap nhap so luong: " +product_size.getId_size());
+            System.out.println("id size cap nhap: " +product_size.getId_size());
 
             preparedStatement.executeUpdate();
             System.out.println("Cap nhap so luong thanh cong");

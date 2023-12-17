@@ -63,9 +63,6 @@ public class Order_Servlet extends HttpServlet {
             System.out.println("Gia tien " + total_price);
 
             Timestamp order_date = new Timestamp(System.currentTimeMillis());
-//            SimpleDateFormat formatter = new SimpleDateFormat("HH:mm dd-MM-yyyy"); // Định dạng ngày giờ mong muốn
-//        String formattedDate = formatter.format(currentTimestamp);
-//        System.out.println("Thời gian hiện tại: " + formattedDate);
             Order order = new Order(id_account, total_price, order_date);
          
             ArrayList<ItemCart> list = (ArrayList<ItemCart>) session.getAttribute("listItemCart");
@@ -91,6 +88,7 @@ public class Order_Servlet extends HttpServlet {
             cart_BO.removeCart(id_account, list_detail_order);
             cart_BO.updateQuantity(list_product_size);
         }
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

@@ -11,11 +11,13 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.bean.BillView;
 import model.bean.Product;
 
 import model.bean.ProductView;
 import model.bean.Product_Category;
 import model.bean.Product_size;
+import model.bo.BillView_BO;
 import model.bo.ProductView_BO;
 import model.bo.Product_BO;
 
@@ -91,6 +93,14 @@ public class ProductView_Servlet extends HttpServlet {
             String listPrice = request.getParameter("price");
             ArrayList<Product> products = product_BO.getListProductSearch(listCategory, listOrigin);
             request.setAttribute("list_product", products);
+            request.getRequestDispatcher(url).forward(request, response);
+        }
+
+        if (request.getParameter("bill") != null) {
+            url = "./list_bill.jsp";
+            BillView_BO bill_bo = new BillView_BO();
+            ArrayList<BillView> list = bill_bo.getListBillView();
+            request.setAttribute("list", list);
             request.getRequestDispatcher(url).forward(request, response);
         }
 

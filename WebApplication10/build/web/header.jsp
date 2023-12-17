@@ -47,6 +47,7 @@
                     <a href="ProductView_Servlet?function=manage">Management Product</a>
                     <a href="#contact">Setting</a>
                     <a href="#contact">Log out</a>
+                    <a href="ProductView_Servlet?bill=1">List of bill</a>
                 </div>
 
             </nav>          
