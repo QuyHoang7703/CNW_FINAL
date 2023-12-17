@@ -50,9 +50,13 @@
         <h1>Giỏ hàng</h1>
         <%
             ArrayList<ItemCart> listItemCart = (ArrayList<ItemCart>) request.getAttribute("listItemCart");
+              ArrayList<ItemCart> listItemCart2 = (ArrayList<ItemCart>) session.getAttribute("listItemCart");
+            if(listItemCart2==null){
+                out.println("ko co pt");
+            }
         %>
 
-        <!--<form action="Cart_Servlet" method="POST">-->
+        <form action="Cart_Servlet" method="POST">
             <table width="100%" >
                 <thead>
                 <th>Tên sản phẩm</th>
@@ -62,6 +66,7 @@
                 <th>Kích thước</th>
                 <th>Giá tiền</th>
                 <th>Lựa chọn</th>
+                <th>Mua</th>
                 </thead>
                 <tbody>
                     <%
@@ -74,7 +79,7 @@
 
                     %>
                     <tr>
-                        <form action="Cart_Servlet" method="POST">
+                        <!--<form action="Cart_Servlet" method="POST" name="productForm">-->
                         <td><%=itemCart.getName_product()%></td>
                         <td>
                             <%
@@ -96,21 +101,23 @@
                         %>
 
 
-                        <td id="price_<%= index%>"><%= formattedPrice%></td>
-                        <%
-                            BigDecimal quantity = new BigDecimal(itemCart.getQuantity());
-                            BigDecimal tt = price.multiply(quantity);
-                            String formattedPrice2 = currencyFormat.format(tt);
-                        %>
+
+                        <td> <input type="type" id"" value="<%=formattedPrice%>" readonly></td>
+                            <%
+                                BigDecimal quantity = new BigDecimal(itemCart.getQuantity());
+                                BigDecimal tt = price.multiply(quantity);
+                                String formattedPrice2 = currencyFormat.format(tt);
+                            %>
                         <td><%=itemCart.getName_size()%></td>
-                <input type="hidden" name="size" value="<%=itemCart.getName_size()%>">
-                <input type="hidden" name="name_size_<%= itemCart.getId_product()%>_<%= itemCart.getName_size()%>" value="<%=itemCart.getName_size()%>">
+                <input type="hidden" name="size_<%= itemCart.getId_product()%>" value="<%=itemCart.getName_size()%>">
+             
                 <td> <input type="text" name="tt" value="<%=formattedPrice2%>" id="tt_<%= index%>" size="5" ></td>
 
                 <td><button name="btn_del_cart" value="<%= itemCart.getId_product()%>">Xóa</button></td>
-                 </form>
+                <td><input type="checkbox" name="selectedItem[]"  value="<%=itemCart.getId_product()%>"></td>
+                <!--</form>-->
                 </tr>
-                
+
                 <%
                         index++;
                         total_price = total_price.add(tt);
@@ -121,46 +128,50 @@
 
                 </tbody>
             </table>
-            <h2>Tổng tiền: <input type="type" id"" value="<%=formattedToTalPrice%>"></h2>
-            <button>Thanh toán</button>
-            <script>
-                function decreaseQuantity(rowId) {
-                    var inputQuantity = document.getElementById('quantity_' + rowId);
-                    var currentQuantity = parseInt(inputQuantity.value);
-                    if (currentQuantity > 1) {
-                        inputQuantity.value = currentQuantity - 1;
-                        updateTotal(rowId);
-                    }
-                }
+            <h2>Tổng tiền: <input type="type" id"" value="<%=formattedToTalPrice%>" readonly></h2>
 
-                function increaseQuantity(rowId) {
-                    var inputQuantity = document.getElementById('quantity_' + rowId);
-                    var currentQuantity = parseInt(inputQuantity.value);
-                    inputQuantity.value = currentQuantity + 1;
+            <button name="btn_pay" value="pay" id="btnThanhToan">Thanh toán</button>
+        </form>
+        <script>
+            function decreaseQuantity(rowId) {
+                var inputQuantity = document.getElementById('quantity_' + rowId);
+                var currentQuantity = parseInt(inputQuantity.value);
+                if (currentQuantity > 1) {
+                    inputQuantity.value = currentQuantity - 1;
                     updateTotal(rowId);
                 }
+            }
 
-                function updateTotal(rowId) {
-                    var inputQuantity = document.getElementById('quantity_' + rowId);
-                    var quantity = parseInt(inputQuantity.value);
+            function increaseQuantity(rowId) {
+                var inputQuantity = document.getElementById('quantity_' + rowId);
+                var currentQuantity = parseInt(inputQuantity.value);
+                inputQuantity.value = currentQuantity + 1;
+                updateTotal(rowId);
+            }
 
-                    var priceText = document.getElementById('price_' + rowId).innerText;
-                    var price = parseInt(priceText.replace(/\D/g, '')); // Loại bỏ mọi ký tự không phải là số
-//                    alert(price);
-                    var total = quantity * price;
+            function updateTotal(rowId) {
+                var inputQuantity = document.getElementById('quantity_' + rowId);
+                var quantity = parseInt(inputQuantity.value);
 
-                    var currencyFormat = new Intl.NumberFormat('vi-VN', {style: 'currency', currency: 'VND'});
-                    var formattedTotal = currencyFormat.format(total);
-//                    alert(formattedTotal);
-                    document.getElementById('tt_' + rowId).value = formattedTotal;
+                var priceText = document.getElementById('price_' + rowId).innerText;
+                var price = parseInt(priceText.replace(/\D/g, '')); // Loại bỏ mọi ký tự không phải là số
+        //                    alert(price);
+                var total = quantity * price;
 
-                }
+                var currencyFormat = new Intl.NumberFormat('vi-VN', {style: 'currency', currency: 'VND'});
+                var formattedTotal = currencyFormat.format(total);
+        //                    alert(formattedTotal);
+                document.getElementById('tt_' + rowId).value = formattedTotal;
+
+            }
+
+           
 
 
 
 
-            </script>
-<!--        </form>-->
+        </script>
+       
 
 
 

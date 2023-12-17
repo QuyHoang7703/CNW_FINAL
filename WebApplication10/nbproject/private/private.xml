@@ -3,8 +3,28 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/QUYHOANG/Downloads/CNW/WebApplication10/src/java/model/bean/Detail_order.java</file>
+            <file>file:/C:/Users/QUYHOANG/Downloads/CNW/WebApplication10/src/java/model/bean/Order.java</file>
             <file>file:/C:/Users/QUYHOANG/Downloads/CNW/WebApplication10/web/cart_view.jsp</file>
+            <file>file:/C:/Users/QUYHOANG/Downloads/CNW/WebApplication10/src/java/model/dao/Order_DAO.java</file>
+            <file>file:/C:/Users/QUYHOANG/Downloads/CNW/WebApplication10/src/java/model/bean/ProductView.java</file>
+            <file>file:/C:/Users/QUYHOANG/Downloads/CNW/WebApplication10/src/java/model/dao/Cart_DAO.java</file>
+            <file>file:/C:/Users/QUYHOANG/Downloads/CNW/WebApplication10/src/java/controller/Order_Servlet.java</file>
+            <file>file:/C:/Users/QUYHOANG/Downloads/CNW/WebApplication10/src/java/model/bo/Cart_BO.java</file>
+            <file>file:/C:/Users/QUYHOANG/Downloads/CNW/WebApplication10/web/order.jsp</file>
+            <file>file:/C:/Users/QUYHOANG/Downloads/CNW/WebApplication10/src/java/model/bean/Detail_account.java</file>
+            <file>file:/C:/Users/QUYHOANG/Downloads/CNW/WebApplication10/src/java/model/bean/Product_Category.java</file>
+            <file>file:/C:/Users/QUYHOANG/Downloads/CNW/WebApplication10/src/java/model/bo/ProductView_BO.java</file>
+            <file>file:/C:/Users/QUYHOANG/Downloads/CNW/WebApplication10/web/header.jsp</file>
+            <file>file:/C:/Users/QUYHOANG/Downloads/CNW/WebApplication10/src/java/model/bean/Product_size.java</file>
+            <file>file:/C:/Users/QUYHOANG/Downloads/CNW/WebApplication10/src/java/model/bo/Order_BO.java</file>
+            <file>file:/C:/Users/QUYHOANG/Downloads/CNW/WebApplication10/src/java/model/bean/ItemCart.java</file>
+            <file>file:/C:/Users/QUYHOANG/Downloads/CNW/WebApplication10/src/java/model/dao/Product_DAO.java</file>
+            <file>file:/C:/Users/QUYHOANG/Downloads/CNW/WebApplication10/src/java/model/dao/ProductView_DAO.java</file>
             <file>file:/C:/Users/QUYHOANG/Downloads/CNW/WebApplication10/src/java/controller/Cart_Servlet.java</file>
+            <file>file:/C:/Users/QUYHOANG/Downloads/CNW/WebApplication10/src/java/model/bo/Product_BO.java</file>
+            <file>file:/C:/Users/QUYHOANG/Downloads/CNW/WebApplication10/src/java/model/dao/ItemCart_DAO.java</file>
+            <file>file:/C:/Users/QUYHOANG/Downloads/CNW/WebApplication10/src/java/model/bean/Product.java</file>
         </group>
     </open-files>
 </project-private>

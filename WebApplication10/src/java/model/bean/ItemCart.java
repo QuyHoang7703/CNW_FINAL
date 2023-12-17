@@ -13,6 +13,9 @@ public class ItemCart {
     private byte[] image;
     private BigDecimal price;
     private int quantity;
+
+    public ItemCart() {
+    }
     private String name_size;
 
     public String getName_size() {

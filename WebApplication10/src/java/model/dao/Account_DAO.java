@@ -54,8 +54,8 @@ public class Account_DAO {
         }
         return list_Account;
     }
-    
-     public ArrayList<Detail_account> getListDetailAccount() {
+
+    public ArrayList<Detail_account> getListDetailAccount() {
         ArrayList<Detail_account> list_Account = new ArrayList<Detail_account>();
         String sql = "Select * from detail_account";
         try {
@@ -71,13 +71,12 @@ public class Account_DAO {
         return list_Account;
     }
 
-    private String description;
-    private BigDecimal price;
-    private int quantity;
-    private String origin;
-    private int id_size;
-    private Byte[] image;
-
+//    private String description;
+//    private BigDecimal price;
+//    private int quantity;
+//    private String origin;
+//    private int id_size;
+//    private Byte[] image;
     public ArrayList<Product> get_List_Product() {
         ArrayList<Product> list_Product = new ArrayList<Product>();
 
@@ -219,11 +218,11 @@ public class Account_DAO {
         }
         return 0;
     }
-    
-    public int get_id_by_username(String username){
+
+    public int get_id_by_username(String username) {
         int result = 0;
-        String sql = "Select id from account where username='" +username +"'";
-       
+        String sql = "Select id from account where username='" + username + "'";
+
         try {
             ResultSet resultSet = statement.executeQuery(sql);
             if (resultSet.next()) {
@@ -234,7 +233,28 @@ public class Account_DAO {
             e.printStackTrace();
         }
         return result;
-        
+
+    }
+
+    public Detail_account get_detail_account_by_id(int id_usser) {
+        Detail_account detail_account = null;
+        String sql = "Select * from detail_account where id = " + id_usser;
+        try {
+            ResultSet resultSet = statement.executeQuery(sql);
+            if (resultSet.next()) {
+                String name = resultSet.getString("name");
+                String address = resultSet.getString("address");
+                String phone = resultSet.getString("phone_number");
+                String email = resultSet.getString("email");
+                int role = resultSet.getInt("role");    
                 
+                detail_account = new Detail_account(name, address, phone, email, role);
+            }
+        } catch (SQLException ex) {
+            System.out.println("Khong tim thay detail_account");
+            ex.printStackTrace();
+        }
+
+        return detail_account;
     }
 }

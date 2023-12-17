@@ -55,4 +55,8 @@ public class Account_BO {
         public int get_id_by_username(String username){
             return account_DAO.get_id_by_username(username);
         }
+        
+        public Detail_account get_detail_account_by_id(int id_usser) {
+            return account_DAO.get_detail_account_by_id(id_usser);
+        }
 }
